@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    links:
+      - link
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - nginx-config:/etc/nginx/
+
+  link:
+    image: "happydang/short-link:${TAG}"
+
+    environment:
+      port: 80
+      dbPath: /link-db
+
+    volumes:
+      - link-db:/link-db
+
+volumes:
+  nginx-config:
+
+  link-db:

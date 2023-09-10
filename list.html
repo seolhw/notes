@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .red{
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="value">
+    <input type="text" v-model="sex">
+    <div class="left" :class="{red: item.deptId===actives}" @click="a(item.deptId)" v-for="item in allList" :key="item.deptId">
+      <div>{{item.deptName}}</div>
+    </div>
+    <hr>
+    <div class="right" v-for="item in activesList.children" :key="item.code">
+      <div>{{item.name}} {{item.sex}}</div>
+    </div>
+
+  </div>
+  <!-- <script>
+    new Vue({
+      el: "#app",
+      data() {
+        return {
+          value: '',
+          sex:'',
+          actives: 0,
+          aoList: [ { "code": 1, jp:'hh1-hh', "name": "欢欢1-h号", "deptName": "科室1", "deptId": 23 ,"sex": ''},
+          { "code": 2, "jp": 0, "name": "包2", "deptName": "科室1", "deptId": 23,"sex": 0},
+          { "code": 3, "name": "包3", "deptName": "科室1", "deptId": 23,"sex": 0 },
+          { "code": 4, "name": "包4", "deptName": "科室1", "deptId": 23,"sex": 0 },
+          { "code": 1, "name": "包5", "deptName": "科室2", "deptId": 24,"sex": 1},
+          { "code": 2, "name": "包6", "deptName": "科室2", "deptId": 24 ,"sex": 1},
+          { "code": 3, "name": "包7", "deptName": "科室2", "deptId": 24 ,"sex": 1},
+           { "code": 4, "name": "包8", "deptName": "科室2", "deptId": 24 ,"sex": 1},
+            { "code": 1, "name": "包9", "deptName": "科室3", "deptId": 25,"sex": 1 },
+             { "code": 2, "name": "包10", "deptName": "科室3", "deptId": 25,"sex": 1 },
+              { "code": 3, "name": "包11", "deptName": "科室3", "deptId": 25 ,"sex": 1},
+               { "code": 4, "name": "包12", "deptName": "科室3", "deptId": 25,"sex": '' } ]
+        }
+      },
+      computed: {
+        newList(){
+          let newlist = []
+          this.aoList.forEach(e => {
+            const { deptId,deptName,code,name } = e
+            const obj = newlist.find(item => item.deptId === deptId)
+            if(obj){
+              obj.children.push(e)
+            }else{
+              newlist.push({
+                deptId,
+                deptName,
+                children: [ e ]
+              })
+            }
+          })
+          return newlist
+        },
+        activesList() {
+          return this.allList.find((item) => {
+            return item.deptId === this.actives
+          })
+        },
+        allList() {
+          let obj = {
+            deptId: 0,
+            deptName: '全部',
+            children: this.aoList
+          }
+          let alllist = [
+            obj,
+            ...this.newList
+          ].map(item =>{
+            const children = item.children.filter((child)=>{
+              let testSex=(this.sex==='')|| child.sex===Number(this.sex)||
+              let testText=child.name.includes(this.value) || (child.jp && child.jp.includes(this.value))
+              // return child.name.includes(this.value) || (child.jp && child.jp.includes(this.value))
+
+              return testSex && testText
+            })
+            return {
+              ...item,
+              children
+            }
+          })
+          return alllist
+        }
+      },
+      methods: {
+        a(id) {
+          this.actives = id
+        }
+      },
+
+    })
+  </script> -->
+  <script>
+
+    let a = {
+      title: '小欢欢',
+      age: '18',
+      toJSON(){
+        return this.title + this.age + '岁了'
+      }
+    }
+    JSON.stringify(a)
+    console.log(JSON.stringify(a),'xxx')
+
+    let data = {
+      time: new Date('2010-10-1'),
+      toJSON(){
+        return '欢欢'
+      }
+    }
+console.log(new Date().setDate(30+ new Date().getDate()))
+    function toTime(key,value){
+      if(value){
+        const newValue = JSON.stringify(value,(key2,val2)=>{
+          if(key2 === 'time'){
+            return new Date(val2).getTime()
+          }
+          return val2
+        })
+        localStorage.setItem(key, newValue)
+      }else{
+        return JSON.parse(localStorage.getItem(key),function(key2,val2){
+          if(key2==='time'){
+            return new Date(val2)
+          }
+          return val2
+        })
+      }
+    }
+
+
+    toTime('data', data) // 存储
+    console.log(toTime('data'))
+  </script>
+</body>
+
+</html>
