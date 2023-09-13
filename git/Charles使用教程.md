@@ -31,7 +31,7 @@ License Key: 48891cf209c6d32bf4
 
 # Charles 主界面介绍
 
-![image-20230328143809116](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328143809116.png)
+![image-20230328143809116](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328143809116.png)
 
 ## 菜单导航栏
 
@@ -41,7 +41,7 @@ Charles 的主菜单包括：`File`、`Edit`、`View`、`Proxy`、`Tools`、`Win
 
 Charles 是一个 HTTP 和 SOCKS 代理服务器。代理请求和响应使 Charles 能够在请求从客户端传递到服务器时检查和更改请求，以及从服务器传递到客户端时的响应。下面主要介绍 Charles 提供的一些代理功能。Proxy 菜单的视图如下图所示：
 
-![image-20230328145707955](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328145707955.png)
+![image-20230328145707955](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328145707955.png)
 
 - Start/Stop Recording：开始/停止记录会话。
 - Start/Stop Throttling：开始/停止节流。
@@ -62,7 +62,7 @@ Charles 是一个 HTTP 和 SOCKS 代理服务器。代理请求和响应使 Char
 
 Charles 是一个 HTTP 和 SOCKS 代理服务器，所有的请求都会经过 Charles。下面主要介绍 Charles 提供的一些实用工具。Tools 菜单的视图如下图所示：
 
-![image-20230328145939302](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328145939302.png)
+![image-20230328145939302](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328145939302.png)
 
 - No Caching Settings：禁用缓存设置。
 - Block Cookies Settings：禁用 Cookie设置。
@@ -88,7 +88,7 @@ Charles 是一个 HTTP 和 SOCKS 代理服务器，所有的请求都会经过 C
 
 Charles 顶部为菜单导航栏，菜单导航栏下面为工具导航栏。视图如下图所示：
 
-![image-20230328144320224](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328144320224.png)
+![image-20230328144320224](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328144320224.png)
 
 Charles 主要提供两种查看封包的视图，分别名为 `Structure` 和 `Sequence`。
 
@@ -109,7 +109,7 @@ Charles 会自动配置浏览器和工具的代理设置，所以说打开工具
 
 2. 勾选 **Proxy | Windows Proxy** 。
 
-   ![image-20230328151301493](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328151301493.png)
+   ![image-20230328151301493](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328151301493.png)
 
 ## 移动端抓包
 
@@ -125,17 +125,17 @@ Charles 会自动配置浏览器和工具的代理设置，所以说打开工具
 
 - 通过 Charles 的主菜单 **Help | Local IP Address** 或者通过命令行工具输入 `ipconfig` 查看本机的 IP 地址。
 
-  ![image-20230328150534780](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328150534780.png)
+  ![image-20230328150534780](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328150534780.png)
 
 - 设置代理：打开手机端的 WIFI 代理设置，输入电脑 IP 和 Charles 的代理端口。
 
-  ![image-20230328150649977](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328150649977.png)
+  ![image-20230328150649977](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328150649977.png)
 
 4、设置好之后，我们打开手机上的任意需要网络请求的程序，就可以看到 Charles 弹出手机请求连接的确认菜单（只有首次弹出），点击 **Allow** 即可完成设置。
 
-![image-20230328150735053](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328150735053.png)
+![image-20230328150735053](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328150735053.png)
 
 5、完成以上步骤，就可以进行抓包了。
 
-![image-20230328151012464](C:\Users\HP288G3\AppData\Roaming\Typora\typora-user-images\image-20230328151012464.png)
+![image-20230328151012464](https://minio.lihuiwang.net/notes/notes/2023/09/13/image-20230328151012464.png)
 
